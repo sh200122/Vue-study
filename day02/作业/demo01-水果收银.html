@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <table>
+      <caption>欢迎光临阿浩的水果摊</caption>
+      <tr>
+        <th>
+          菠萝{{price}}￥/斤，折扣<{{discount}}折>
+        </th>
+      </tr>
+      <tr>
+        <td>
+          输入你要购买的斤数
+          <input type="number" v-model="quantity">
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: center;">
+          <button @click="calculatePrice()">结账</button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          账单:总价:{{totalPrice}}￥，折后价:{{discountPrice}}￥，省了:{{saveMoney}}￥
+        </td>
+      </tr>
+    </table>
+  </div>
+  <script src="/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: "#app",
+      data: {
+        price: 10,
+        discount: 8,
+        quantity: 0,
+        totalPrice: 0,
+        discountPrice: 0,
+        saveMoney: 0
+      },
+      computed: {
+        calculatePrice() {
+          this.totalPrice = this.price * this.quantity
+          this.discountPrice = this.totalPrice * (this.discount / 10)
+          this.saveMoney = this.totalPrice - this.discountPrice
+        }
+      }
+    })
+
+  </script>
+</body>
+
+</html>

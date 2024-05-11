@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 准备容器 -->
+  <div id="app">
+    <span v-for="(item,index) in dataList" :key="index">
+      <input type="checkbox" v-model="item.isChecked">{{item.name}}
+    </span>
+    <ul v-for="item in selectedList" :key="item.name">
+      <li>{{item.name}}</li>
+    </ul>
+  </div>
+  <!-- 引包 -->
+  <script src="/vue.js"></script>
+  <!-- 创建Vue实例 -->
+  <script>
+    const app = new Vue({
+      el: "#app",
+      data: {
+        dataList: [
+          { name: "科幻", isChecked: false },
+          { name: "喜剧", isChecked: false },
+          { name: "动漫", isChecked: false },
+          { name: "冒险", isChecked: false },
+          { name: "科技", isChecked: false },
+          { name: "军事", isChecked: false },
+          { name: "娱乐", isChecked: false },
+          { name: "奇闻", isChecked: false }
+        ],
+      },
+      computed: {
+        selectedList() {
+          return this.dataList.filter(item => item.isChecked)
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
