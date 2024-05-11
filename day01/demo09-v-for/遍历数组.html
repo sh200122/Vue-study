@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 准备容器 -->
+  <div id="app">
+    <h3>阿浩水果店</h3>
+    <ul>
+      <li v-for="(item,index) in list">{{item}}-{{index}}</li>
+    </ul>
+    <!-- 可以省略index -->
+    <ul>
+      <li v-for="item in list">{{item}}</li>
+    </ul>
+  </div>
+  <!-- 引包 -->
+  <script src="/vue.js"></script>
+  <!-- 创建Vue实例化 -->
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        list: ['西瓜', '橙子', '菠萝', '苹果']
+      }
+    })
+  </script>
+</body>
+
+</html>

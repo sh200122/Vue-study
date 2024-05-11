@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 步骤：
+  1.准备容器
+  2.引包
+  3.创建Vue实例 new Vue()
+  4.指定配置项 el data=>渲染数据
+  -->
+  <!-- 准备容器 -->
+  <div id="app">
+    {{msg}}
+    {{count}}
+  </div>
+  <!-- 引包 ,引入的是开发版本的包-->
+  <script src="/vue.js"></script>
+  <!-- 创建Vue实例 -->
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        msg: "hello Vue",
+        counnt: 666
+      }
+    })
+  </script>
+</body>
+
+</html>

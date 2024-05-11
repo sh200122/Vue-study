@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 准备容器 -->
+  <div id="app">
+    <!-- 使用v-html指令 -->
+    <div v-html="msg"></div>
+  </div>
+  <!-- 引包 -->
+  <script src="/vue.js"></script>
+  <script>
+    // 实例化Vue
+    const app = new Vue({
+      el: '#app',
+      data: {
+        msg: '<a href="https://global.jd.com/">京东</a>'
+      }
+    })
+  </script>
+</body>
+
+</html>

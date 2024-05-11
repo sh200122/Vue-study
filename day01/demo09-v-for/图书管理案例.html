@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div id="app">
+    <h3>阿浩的书架</h3>
+    <ul>
+      <!-- key的作用：给元素添加唯一的标识，便于Vue进行列表项的正确排序复用，key的值必须有唯一性 -->
+      <li v-for="(item,index) in booksList" :key="item.id">
+        <span>{{item.name}}</span>
+        <span>{{item.author}}</span>
+        <!-- 注册点击事件，通过id删除数组对应项 -->
+        <button @click="del(item.id)">删除</button>
+      </li>
+    </ul>
+  </div>
+  <script src="/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        booksList: [
+          { id: 1, name: '《红楼梦》', author: '曹雪芹' },
+          { id: 2, name: '《西游记》', author: '吴承恩' },
+          { id: 3, name: '《水浒传》', author: '施耐庵' },
+          { id: 4, name: '《三国演义》', author: '罗贯中' }
+        ]
+      },
+      methods: {
+        del(id) {
+          // filter:根据条件，保留满足条件的对应项，得到一个新数组,再把新数组赋值给booksList
+          this.booksList = this.booksList.filter(item => item.id !== id)
+        }
+      },
+    })
+  </script>
+</body>
+
+</html>

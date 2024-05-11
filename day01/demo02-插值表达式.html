@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 准备容器 -->
+  <div id="app">
+    <p>{{name}}</p>
+    <p>{{name.toUpperCase()}}</p>
+    <p>{{name+'你好'}}</p>
+    <p>{{ age >=18 ? '成年' : '未成年'}}</p>
+    <p>{{friend.name}}</p>
+    <p>{{friend.desc}}</p>
+  </div>
+  <!-- 引包 -->
+  <script src="/vue.js"></script>
+  <script>
+    // 创建Vue实例
+    const app = new Vue({
+      el: '#app',
+      data: {
+        name: "spiderMan",
+        age: "20",
+        friend: {
+          name: "ironMan",
+          desc: "爱造火箭"
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

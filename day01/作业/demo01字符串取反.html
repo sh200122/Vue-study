@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 准备容器 -->
+  <div id="app">
+    <h1>{{msg}}</h1>
+    <button @click="fn()">逆转世界</button>
+  </div>
+  <!-- 引包 -->
+  <script src="/vue.js"></script>
+  <!-- 创建Vue实例 -->
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        msg: "Hello World"
+      },
+      methods: {
+        fn() {
+          // 字符串取反
+          this.msg = this.msg.split('').reverse().join('')
+        }
+      },
+    })
+  </script>
+</body>
+
+</html>
