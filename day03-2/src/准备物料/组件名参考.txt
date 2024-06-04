@@ -1,0 +1,16 @@
+AhShortCut
+AhHeaderNav
+AhBanner
+AhNewGoods
+AhHotBrand
+AhTopic
+AhFooter
+
+
+AhShortCut  => 快捷链接
+AhHeaderNav => 顶部导航
+AhBanner    => 轮播区域
+AhNewGoods  => 新鲜好物
+AhHotBrand  => 热门品牌
+AhTopic     => 最新专题
+AhFooter    => 版权底部
